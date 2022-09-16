@@ -1,0 +1,9 @@
+.github/
+.idea/
+.settings/
+target/
+.checkstyle
+.classpath
+.project
+*.iml
+**/META-INF/maven/

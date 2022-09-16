@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.dhruvpjoshi</groupId>
+	<artifactId>isengard</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>isengard</name>
+	
+	<modules>
+		<module>isengard-server</module>
+	</modules>
+
+	<properties>
+		<java-version>1.8</java-version>
+		<mitreid-version>1.3.4</mitreid-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.mitre</groupId>
+				<artifactId>openid-connect-parent</artifactId>
+				<type>pom</type>
+				<version>${mitreid-version}</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mitre</groupId>
+			<artifactId>openid-connect-server-webapp</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>isengard</finalName>
+	</build>
+	
+</project>
