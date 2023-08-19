@@ -1,0 +1,15 @@
+name: isengard
+services:
+  db:
+    image: mysql:8.0.31-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: "${IG_DB_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${IG_DB_NAME}"
+      MYSQL_USER: "${IG_DB_USER}"
+      MYSQL_PASSWORD: "${IG_DB_PASSWORD}"
+    volumes:
+      - type: bind
+        source: "${IG_DB_VOLUME}"
+        target: /var/lib/mysql
+    ports:
+      - "3306:3306"
